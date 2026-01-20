@@ -1,3 +1,5 @@
+"use client"; // <-- add this at the very top
+
 import { useParams } from "next/navigation";
 
 export default function ItemDetailsPage() {
