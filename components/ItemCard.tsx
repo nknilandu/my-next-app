@@ -5,12 +5,12 @@ interface ItemCardProps {
   price: number;
 }
 
-export default function ItemCard({ id, name, description, price }: ItemCardProps) {
+export default function ItemCard({ name, description, price }: ItemCardProps) {
   return (
-    <div className="border p-4 rounded shadow">
-      <h2 className="font-bold text-xl">{name}</h2>
-      <p>{description}</p>
-      <p className="font-semibold mt-2">${price}</p>
+    <div className="border p-6 rounded-lg shadow hover:shadow-lg transition">
+      <h2 className="text-xl font-bold mb-2">{name}</h2>
+      <p className="text-gray-600 dark:text-gray-300 mb-2">{description}</p>
+      <p className="font-semibold">${price}</p>
     </div>
   );
 }

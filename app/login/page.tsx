@@ -7,9 +7,14 @@ export default function LoginPage() {
   const [password, setPassword] = useState("");
   const router = useRouter();
 
-  const handleLogin = () => {
-    if (email === "test@example.com" && password === "123456") {
-      document.cookie = "auth=true; path=/";
+  const handleLogin = async () => {
+    const res = await fetch("/api/auth/login", {
+      method: "POST",
+      body: JSON.stringify({ email, password }),
+      headers: { "Content-Type": "application/json" },
+    });
+
+    if (res.ok) {
       router.push("/items");
     } else {
       alert("Invalid credentials");
@@ -35,7 +40,7 @@ export default function LoginPage() {
       />
       <button
         onClick={handleLogin}
-        className="w-full bg-blue-600 text-white py-2 rounded"
+        className="w-full py-2 bg-blue-600 text-white rounded hover:bg-blue-700"
       >
         Login
       </button>

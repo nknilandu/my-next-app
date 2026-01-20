@@ -2,8 +2,8 @@ import { NextRequest, NextResponse } from "next/server";
 
 // Mock credentials
 const MOCK_USER = {
-  email: "test@example.com",
-  password: "123456",
+  email: "nknilandu@gmail.com",
+  password: "Nk12345678",
 };
 
 export async function POST(req: NextRequest) {
